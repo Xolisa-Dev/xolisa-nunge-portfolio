@@ -1,2 +1,11 @@
-# xolisa-nunge-portfolio
-My personal portfolio built with Nuxt and Nuxt UI, highlighting real-world projects and my journey as a growing full-stack developer.
+# Xolisa Nunge – Developer Portfolio
+
+A modern, performance-focused portfolio built with Nuxt, Nuxt UI, and Nuxt SEO.
+
+This project showcases my frontend expertise, real-world projects, and my growth toward full-stack and scalable application architecture.
+
+## Core Focus
+- Performance & optimization
+- SEO best practices
+- Clean component structure
+- Scalable frontend systems
