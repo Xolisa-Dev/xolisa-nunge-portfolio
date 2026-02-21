@@ -4,15 +4,46 @@
 @theme static {
   --font-sans: 'Public Sans', sans-serif;
 
-  --color-green-50: #EFFDF5;
-  --color-green-100: #D9FBE8;
-  --color-green-200: #B3F5D1;
-  --color-green-300: #75EDAE;
-  --color-green-400: #00DC82;
-  --color-green-500: #00C16A;
-  --color-green-600: #00A155;
-  --color-green-700: #007F45;
-  --color-green-800: #016538;
-  --color-green-900: #0A5331;
-  --color-green-950: #052E16;
+  /* Neutral / Surface scale */
+  --slate-50:  #f6f7ff;
+  --slate-100: #e9ebff;
+  --slate-200: #cfd3f6;
+  --slate-300: #a8aed8;
+  --slate-400: #7b83b3;
+  --slate-500: #545d8f;
+  --slate-600: #363f6b;
+  --slate-700: #242b52;
+  --slate-800: #171d3d;
+  --slate-900: #0f132e;
+  --slate-950: #090c21;
+
+  /* Purple brand scale */
+  --primary-50:  #efedff;
+  --primary-100: #ddd8ff;
+  --primary-200: #beb2ff;
+  --primary-300: #9a86ff;
+  --primary-400: #7357ff;
+  --primary-500: #4d2fff;
+  --primary-600: #3f22e6;
+  --primary-700: #331ccc;
+  --primary-800: #2617a3;
+  --primary-900: #1b117a;
+
+  /* Pink accent scale */
+  --accent-50:  #ffe7f5;
+  --accent-100: #ffc8e8;
+  --accent-200: #ff99d3;
+  --accent-300: #ff66bc;
+  --accent-400: #ff3ea8;
+  --accent-500: #ff1f95;
+  --accent-600: #e0147f;
+  --accent-700: #b80f67;
+  --accent-800: #900b50;
+  --accent-900: #69073a;
+}
+
+/*Custom CSS Styling*/
+body {
+  background-color: var(--slate-950);
+  padding: 100px
 }
