@@ -30,20 +30,19 @@
   --primary-900: #1b117a;
 
   /* Pink accent scale */
-  --accent-50:  #ffe7f5;
-  --accent-100: #ffc8e8;
-  --accent-200: #ff99d3;
-  --accent-300: #ff66bc;
-  --accent-400: #ff3ea8;
-  --accent-500: #ff1f95;
-  --accent-600: #e0147f;
-  --accent-700: #b80f67;
-  --accent-800: #900b50;
-  --accent-900: #69073a;
+  --color-accent-50:  #ffe7f5;
+  --color-accent-100: #ffc8e8;
+  --color-accent-200: #ff99d3;
+  --color-accent-300: #ff66bc;
+  --color-accent-400: #ff3ea8;
+  --color-accent-500: #ff1f95;
+  --color-accent-600: #e0147f;
+  --color-accent-700: #b80f67;
+  --color-accent-800: #900b50;
+  --color-accent-900: #69073a;
 }
 
 /*Custom CSS Styling*/
 body {
-  background-color: var(--slate-950);
-  padding: 100px
+  background-color: var(--slate-800);
 }

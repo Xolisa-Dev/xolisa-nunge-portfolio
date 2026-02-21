@@ -7,7 +7,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <p class="text-sm md:text-base font-bold text-white">
+  <p class="text-sm md:text-base font-bold text-current">
     <slot></slot>
   </p>
 </template>

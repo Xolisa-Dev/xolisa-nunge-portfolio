@@ -7,7 +7,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <h3 class="text-xl md:text-3xl font-bold text-white">
+  <h3 class="text-xl md:text-3xl font-bold text-current">
     <slot></slot>
   </h3>
 </template>

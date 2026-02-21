@@ -5,49 +5,58 @@ const route = useRoute()
 
 const items = computed<NavigationMenuItem[]>(() => [
   {
-    label: 'Docs',
-    to: '/docs/getting-started',
-    active: route.path.startsWith('/docs/getting-started')
+    label: 'HOME',
+    to: '/',
+    active: route.path.startsWith('/')
   },
   {
-    label: 'Components',
-    to: '/docs/components',
-    active: route.path.startsWith('/docs/components')
+    label: 'ABOUT',
+    to: '#about',
+    active: route.path.startsWith('#about')
   },
   {
-    label: 'Figma',
-    to: 'https://go.nuxt.com/figma-ui',
-    target: '_blank'
+    label: 'SKILLS',
+    to: '#skills',
+    active: route.path.startsWith('#skills')
   },
   {
-    label: 'Releases',
-    to: 'https://github.com/nuxt/ui/releases',
-    target: '_blank'
+    label: 'CASE STUDIES',
+    to: '/case-studies',
+    active: route.path.startsWith('/case-studies')
+  },
+  {
+    label: 'CONTACT',
+    to: '/contact',
+    active: route.path.startsWith('/contact')
   }
 ])
 </script>
 
 <template>
-  <UHeader>
+  <UHeader
+    class="bg-slate-950 text-white hover:text-accent-600"
+    :ui="{
+    root: 'border-none py-10 text-white',
+    title: 'text-white ',
+    body: 'text-white'
+    }"
+  >
     <template #title>
-      <Logo class="h-6 w-auto" />
+        <CommonTypographyHeading3 class="text-accent-500">
+          < Dev / >
+        </CommonTypographyHeading3>
     </template>
 
-    <UNavigationMenu :items="items" />
-
     <template #right>
-      <UColorModeButton />
-
-      <UTooltip text="Open on GitHub" :kbds="['meta', 'G']">
-        <UButton
-          color="neutral"
-          variant="ghost"
-          to="https://github.com/nuxt/ui"
-          target="_blank"
-          icon="i-simple-icons-github"
-          aria-label="GitHub"
-        />
-      </UTooltip>
+      <UNavigationMenu
+        :items="items"
+        variant="link"
+        :ui="{
+          link: 'text-white hover:text-accent-600 before:bg-transparent hover:before:bg-transparent data-[state=open]:before:bg-transparent',
+          linkLabel: 'text-inherit',
+          linkActive: 'text-accent-600'
+        }"
+      />
     </template>
   </UHeader>
 </template>
