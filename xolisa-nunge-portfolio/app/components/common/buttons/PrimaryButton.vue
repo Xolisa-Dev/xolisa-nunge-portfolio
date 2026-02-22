@@ -7,7 +7,7 @@ export default defineComponent({
 </script>
 
 <template>
-  <UButton class="px-8 py-4 text-base leading-tight bg-accent-400 hover:bg-transparent hover:text-accent-400 hover:border border-accent-400">
+  <UButton class="px-8  py-4 text-base leading-tight bg-accent-400 hover:bg-transparent hover:text-accent-400 hover:border border-accent-400">
     <slot></slot>
   </UButton>
 </template>
