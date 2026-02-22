@@ -1,6 +1,4 @@
 <script setup>
-import Heading1 from '~/components/common/typography/Heading1.vue'
-
 useHead({
   meta: [
     { name: 'viewport', content: 'width=device-width, initial-scale=1' }
@@ -29,6 +27,7 @@ useSeoMeta({
 
 <template>
   <UApp class="bg-slate-900">
-      <AppHeader/>
-   </UApp>
+    <AppHeader />
+    <NuxtPage />
+  </UApp>
 </template>

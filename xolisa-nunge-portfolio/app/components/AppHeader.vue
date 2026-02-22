@@ -37,8 +37,7 @@ const items = computed<NavigationMenuItem[]>(() => [
     class="bg-slate-950 text-white hover:text-accent-600"
     :ui="{
     root: 'border-none py-10 text-white',
-    title: 'text-white ',
-    body: 'text-white'
+    title: 'text-accent-600 ',
     }"
   >
     <template #title>
