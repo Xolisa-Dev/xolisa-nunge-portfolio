@@ -20,17 +20,17 @@ import Paragraph from "~/components/common/typography/Paragraph.vue";
           </Paragraph>
           </div>
           <div class="space-x-4 pt-8">
-            <NuxtLink to="https://github.com/yourname" target="_blank" class="text-accent-300">
+            <NuxtLink to="https://github.com/Xolisa-Dev" target="_blank" class="text-accent-300">
               <UIcon name="i-simple-icons-github" class="size-8" />
             </NuxtLink>
 
-            <NuxtLink to="https://linkedin.com/in/yourname" target="_blank" class="text-accent-300">
+            <NuxtLink to="https://www.linkedin.com/in/xolisa-nunge-441b25264/" target="_blank" class="text-accent-300">
               <UIcon name="i-simple-icons-linkedin" class="size-8" />
             </NuxtLink>
           </div>
       </div>
     <!--Code Section-->
-        <div class="mx-auto w-full max-w-xl rounded-2xl bg-slate-900/90 p-6 shadow-2xl ring-1 ring-white/10">
+        <div class="mx-auto w-full max-w-xl rounded-2xl bg-slate-900/90 p-6 shadow-accent-600 shadow-2xl ring-1 ring-white/10">
           <div class="mb-4 flex items-center gap-2">
             <span class="h-3 w-3 rounded-full bg-red-600" />
             <span class="h-3 w-3 rounded-full bg-yellow-400" />
