@@ -8,5 +8,6 @@
   <div>
     <HeroBanner/>
     <AboutSection/>
+    <SkillsSection/>
   </div>
 </template>
