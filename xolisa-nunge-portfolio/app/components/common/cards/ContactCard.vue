@@ -3,7 +3,7 @@ import Heading4 from "~/components/common/typography/Heading4.vue";
 import Paragraph from "~/components/common/typography/Paragraph.vue";
 
 defineProps<{
-  skill: {
+  contact: {
     icon: string;
     name: string;
     description: string;
@@ -15,12 +15,14 @@ defineProps<{
   <div class="rounded-xl bg-slate-800 p-6 shadow-lg ring-1 ring-white/10">
     <div class="space-y-3 text-center">
       <UIcon
-        v-if="skill.icon"
-        :name="skill.icon"
+        v-if="contact.icon"
+        :name="contact.icon"
         class="size-6 text-accent-300"
       />
-      <Heading4 class="text-white">{{ skill.name }}</Heading4>
-      <Paragraph class="text-accent-100">{{ skill.description }}</Paragraph>
+      <Heading4 class="text-white">{{ contact.name }}</Heading4>
+      <Paragraph class="text-accent-100">
+            {{ contact.description }}
+        </Paragraph>
     </div>
   </div>
 </template>

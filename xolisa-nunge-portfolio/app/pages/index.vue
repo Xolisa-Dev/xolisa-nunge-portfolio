@@ -9,5 +9,6 @@
     <HeroBanner/>
     <AboutSection/>
     <SkillsSection/>
+    <ContactSection/>
   </div>
 </template>
