@@ -18,10 +18,10 @@ import SecondaryButton from "~/components/common/buttons/SecondaryButton.vue";
     <Paragraph class="text-gray-400">
       Specializing in Vue.js, Nuxt, React, and Directus integrations. Bringing creative solutions to complex problems.
     </Paragraph>
-    <div class="flex items-center justify-center gap-4">
+    <!-- <div class="flex items-center justify-center gap-4">
       <PrimaryButton>View My Work</PrimaryButton>
       <SecondaryButton>Get in touch</SecondaryButton>
-    </div>
+    </div> -->
   </section>
 </template>
 
