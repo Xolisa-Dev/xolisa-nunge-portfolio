@@ -20,13 +20,8 @@ const items = computed<NavigationMenuItem[]>(() => [
     active: route.path.startsWith('#skills')
   },
   {
-    label: 'CASE STUDIES',
-    to: '/case-studies',
-    active: route.path.startsWith('/case-studies')
-  },
-  {
     label: 'CONTACT',
-    to: '/contact',
+    to: '#contact',
     active: route.path.startsWith('/contact')
   }
 ])

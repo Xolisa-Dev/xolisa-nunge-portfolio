@@ -25,7 +25,7 @@ const contacts = [
 </script>
 
 <template>
-  <div class="bg-slate-950 p-14">
+  <div class="bg-slate-950 p-14" id="contact">
     <div class="text-center text-white space-y-4 mb-10">
       <Heading3>Let's Build Something <span class="text-accent-300">Amazing</span></Heading3>
       <Paragraph>Have a project in mind? I'd love to hear about it. Whether it's a full-stack application or a creative web experience, let's make it happen together.
@@ -34,8 +34,12 @@ const contacts = [
     <div class="grid gap-6 px-6 sm:grid-cols-1 lg:grid-cols-3 lg:px-20">
       <ContactCard v-for="contact in contacts" :key="contact.name" :contact="contact" />
     </div>
-<div class="py-10 align-center">
-  <PrimaryButton>Start a Conversation</PrimaryButton>
+<div class="py-10 align-center flex justify-center">
+  <PrimaryButton>
+      <a  href="mailto:devbyxolisa@gmail.com">
+    Start a Conversation
+      </a>
+  </PrimaryButton>
 </div>
   </div>
 </template>

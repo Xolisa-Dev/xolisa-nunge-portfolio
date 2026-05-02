@@ -20,7 +20,9 @@ defineProps<{
         class="size-6 text-accent-300"
       />
       <Heading4 class="text-white">{{ skill.name }}</Heading4>
-      <Paragraph class="text-accent-100">{{ skill.description }}</Paragraph>
+      <Paragraph class="text-white hover:text-accent-300 transition-colors duration-300">
+        {{ skill.description }}
+      </Paragraph>
     </div>
   </div>
 </template>
