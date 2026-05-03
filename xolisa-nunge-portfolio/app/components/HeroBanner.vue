@@ -10,7 +10,7 @@ import SecondaryButton from "~/components/common/buttons/SecondaryButton.vue";
 
 <template>
   <section class="p-28 max-h-137.5 text-center space-y-8 text-white">
-    <Heading1 class="md:text-sm text-accent-300">FULL STACK DEVELOPER</Heading1>
+    <Heading1 class="md:text-sm text-accent-300">JUNIOR WEB DEVELOPER</Heading1>
     <Heading2 class="md:text-7xl">
       Crafting Digital Experiences
       <span class="text-accent-300">with Code & Creativity</span>
