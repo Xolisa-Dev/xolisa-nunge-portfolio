@@ -18,62 +18,70 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: 'portfolio',
-    title: 'Personal Portfolio v2',
-    tagline: 'Where craft meets identity.',
-    description: 'A ground-up redesign of my personal portfolio. Designed and built to be worthy of an Awwwards nomination — premium dark aesthetic, smooth animations, and a story that communicates who I am as a developer and product thinker.',
-    challenge: 'Most developer portfolios look the same — a hero, a skills list, and a GitHub link. I wanted something that felt like reading a story rather than scanning a résumé.',
-    role: 'Solo — Design, Frontend Architecture, Copywriting',
-    solution: 'Built on Nuxt 4 with a bespoke design system. Used Intersection Observer for scroll reveals, CSS animations for the hero, and a data-driven architecture so content is always easy to update.',
+    id: 'brand-audit-hub',
+    title: 'MailOps',
+    tagline: 'Everything between idea and inbox.',
+    description:
+    'Brand Audit Hub is an enterprise email production platform that centralises campaign management, email creation, quality assurance and approvals into a single collaborative workspace. Originally conceived as a QA and brand audit tool, the platform evolved into a complete workflow solution that reduces manual processes, improves collaboration and prepares campaigns for release with confidence.',
+
+    challenge:
+    'Marketing email production relied on multiple disconnected tools including project management software, Slack, email builders, Gmail and spreadsheets. Developers, QA specialists and Project Managers constantly switched between platforms, manually reviewed campaigns, tracked feedback and packaged final assets. This fragmented workflow slowed production, increased context switching and made quality assurance difficult to scale.',
+
+    role:
+    'Product Strategy, UX/UI Design, Full Stack Development & System Architecture',
+
+    solution:
+    'Designed and developed a collaborative platform that brings every stage of the email production lifecycle into one place. The platform features campaign management, a visual email builder, developer tools, an automated QA workspace, PM approvals, user management and role-based dashboards. Every workflow was designed to minimise friction while creating a scalable foundation for future automation and AI-assisted quality assurance.',
+
     lessons: [
-      'Design and engineering are not separate disciplines — the best work happens when they are treated as one.',
-      'Constraint in a design system leads to more creative output, not less.',
-      'Copy is design. Words matter as much as visuals.'
+      'Enterprise software creates the most value when it simplifies workflows rather than adding more features.',
+      'Good UX is about reducing context switching and helping users stay focused on their task.',
+      'Designing systems requires balancing developer flexibility with usability and consistency.',
+      'Building with real user feedback led to better workflows and a more intuitive product experience.',
+      'Automation should support people by removing repetitive work while keeping humans in control of critical decisions.'
     ],
-    tech: ['Nuxt 4', 'Vue 3', 'TypeScript', 'Tailwind CSS', 'Nuxt UI'],
-    image: '/images/projects/portfolio.jpg',
-    github: 'https://github.com/Xolisa-Dev/xolisa-nunge-portfolio',
-    live: 'https://xolisanunge.dev',
+
+    tech: [
+      'Nuxt 3',
+      'Vue 3',
+      'TypeScript',
+      'Drizzle ORM',
+      'MySQL',
+      'Tailwind CSS',
+      'Google OAuth',
+      'HTML Email Development',
+      'UX Design',
+      'Product Strategy'
+    ],
+
+    image: '/images/projects/mailops-submission.png',
+
+    live: 'https://docs.google.com/presentation/d/1DZfurUgTlb28Yql_B6lCqFhTbxvzjsmLymFnZO_1vpg/edit?usp=sharing',
+
     featured: true,
-    year: '2025',
-    status: 'live'
+
+    year: '2026',
+
+    status: 'in-progress'
   },
   {
-    id: 'client-platform',
-    title: 'Client Management Platform',
-    tagline: 'Streamlining operations for a growing business.',
-    description: 'A full-stack web application built for a local business to manage clients, projects, and invoices in one place. Replaced a spreadsheet-heavy workflow with a clean, intuitive interface.',
-    challenge: 'The client was managing everything in Excel. Data was getting lost, invoices were inconsistent, and there was no visibility into project status. They needed a system that felt as easy as a spreadsheet but gave them the power of a proper application.',
-    role: 'Full-Stack Developer — Architecture, Frontend, Backend API, Deployment',
-    solution: 'Built a Vue/Nuxt frontend connected to a Strapi CMS backend. Role-based access control, PDF invoice generation, and a dashboard with live project metrics.',
+    id: 'weather-app',
+    title: 'Weather App',
+    tagline: 'My first taste of live data.',
+    description: 'One of my earliest projects — a simple weather app that fetches live conditions from a public weather API and displays them for any city you search. This is the project that made API calls finally click for me.',
+    challenge: 'As a beginner, the jump from static pages to real, live data felt huge. I had to figure out how to call an external API, handle the asynchronous response, and update the page with the result — all without a framework to lean on.',
+    role: 'Solo — HTML, CSS & JavaScript',
+    solution: 'Built entirely with vanilla JavaScript: a fetch call to a weather API, JSON parsing, and DOM updates to render the current conditions. No libraries, no build step — just the fundamentals.',
     lessons: [
-      'Non-technical users will use your software differently than you expect — observe them, then iterate.',
-      'Simple architecture wins in small-to-medium projects. Choose boring technology for the backend.',
-      'Deployment and maintenance are part of the product. Vercel + Ploi made this sustainable.'
+      'Fetching and rendering real data is where JavaScript finally clicked for me.',
+      'You can build something genuinely useful with just HTML, CSS, and vanilla JS.',
+      'Loading and error states matter, even on a small project.'
     ],
-    tech: ['Vue 3', 'Nuxt', 'Strapi', 'MySQL', 'TypeScript', 'Tailwind CSS'],
-    image: '/images/projects/client-platform.jpg',
-    featured: true,
-    year: '2024',
-    status: 'live'
-  },
-  {
-    id: 'wordpress-theme',
-    title: 'Custom WordPress Theme',
-    tagline: 'Performance-first, design-led publishing.',
-    description: 'A bespoke WordPress theme for a content-heavy website. Zero page-builder dependencies — pure PHP templates, custom blocks, and a focus on speed and accessibility.',
-    challenge: 'The client had a WordPress site built on a heavy page-builder theme. Load times were over 8 seconds on mobile. Google Search Console showed Core Web Vitals failures across the board.',
-    role: 'Frontend Developer — Custom Theme Development, Performance Auditing',
-    solution: 'Rebuilt the theme from scratch using block patterns, custom post types, and optimised asset loading. Achieved sub-2-second LCP on mobile and a Lighthouse performance score above 90.',
-    lessons: [
-      'WordPress is a serious platform when treated seriously. Respect its architecture.',
-      'Performance is a feature, not an afterthought. Users notice speed.',
-      'Accessibility on content sites is often overlooked — heading structure and alt text matter enormously for SEO and screen readers.'
-    ],
-    tech: ['WordPress', 'PHP', 'JavaScript', 'CSS', 'ACF'],
-    image: '/images/projects/wordpress-theme.jpg',
-    featured: true,
-    year: '2024',
-    status: 'live'
+    tech: ['HTML', 'CSS', 'JavaScript', 'Weather API'],
+    image: '/images/projects/weather-app.png',
+    live: 'https://softweatherapp.netlify.app/',
+    featured: false,
+    year: '2022',
+    status: 'archived'
   }
 ]

@@ -68,6 +68,18 @@
   --color-indigo-800: #322494;
   --color-indigo-900: #261b70;
 
+  /* --- Accent alias (maps to the pink accent scale) --- */
+  --color-accent-50:  #fff0f8;
+  --color-accent-100: #ffe0f2;
+  --color-accent-200: #ffc2e6;
+  --color-accent-300: #ff96d3;
+  --color-accent-400: #ff5cb5;
+  --color-accent-500: #f72585;
+  --color-accent-600: #d91870;
+  --color-accent-700: #b50f5a;
+  --color-accent-800: #8f0946;
+  --color-accent-900: #6a0635;
+
   /* Nuxt UI aliases */
   --color-primary-50:  #fff0f8;
   --color-primary-100: #ffe0f2;
@@ -95,7 +107,13 @@
 
 /* ============================================================
    GLOBAL BASE
+   Wrapped in @layer base so Tailwind's utility classes
+   (space-y-*, mt-*, mb-*, p-*, px-*, py-*, …) can override these
+   resets. Unlayered rules win over @layer rules in the cascade,
+   so an unlayered `* { margin:0; padding:0 }` would silently kill
+   every spacing utility across the site.
    ============================================================ */
+@layer base {
 *,
 *::before,
 *::after {
@@ -143,6 +161,7 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.02em;
   color: var(--color-neutral-50);
 }
+} /* end @layer base */
 
 .text-display {
   font-size: clamp(3rem, 8vw, 7rem);

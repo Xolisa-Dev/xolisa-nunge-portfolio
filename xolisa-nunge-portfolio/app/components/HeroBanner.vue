@@ -140,8 +140,7 @@ function scrollDown() {
               <div
                 v-for="stat in [
                   { value: '3+', label: 'Years Learning' },
-                  { value: '10+', label: 'Projects Built' },
-                  { value: '3+', label: 'Happy Clients' }
+                  { value: '2', label: 'Projects Built' }
                 ]"
                 :key="stat.label"
                 class="space-y-1"
@@ -158,39 +157,11 @@ function scrollDown() {
           <div class="relative mx-auto max-w-sm lg:max-w-full">
             <!-- Decorative ring -->
             <div class="absolute -inset-4 rounded-3xl bg-gradient-to-br from-pink-500/20 via-indigo-500/10 to-transparent blur-xl" />
-            <div class="relative gradient-border rounded-3xl overflow-hidden aspect-[3/4] glass">
-              <!-- Profile photo placeholder -->
-              <div class="absolute inset-0 bg-gradient-to-br from-surface-700 to-surface-900 flex items-center justify-center">
-                <div class="text-center space-y-4">
-                  <div class="size-24 rounded-full bg-gradient-to-br from-pink-500/30 to-indigo-500/30 border border-pink-500/20 flex items-center justify-center mx-auto">
-                    <UIcon name="i-lucide-user" class="size-10 text-pink-400/60" />
-                  </div>
-                  <p class="text-neutral-600 text-sm">Photo coming soon</p>
-                </div>
-              </div>
-
-              <!-- Floating badges -->
-              <div class="absolute bottom-6 left-6 right-6 space-y-2">
-                <div class="glass rounded-xl p-3 flex items-center gap-3">
-                  <div class="size-8 rounded-lg bg-pink-500/20 flex items-center justify-center flex-shrink-0">
-                    <UIcon name="i-lucide-map-pin" class="size-4 text-pink-400" />
-                  </div>
-                  <div>
-                    <p class="text-xs text-neutral-500">Based in</p>
-                    <p class="text-sm font-semibold text-neutral-200">South Africa 🇿🇦</p>
-                  </div>
-                </div>
-                <div class="glass rounded-xl p-3 flex items-center gap-3">
-                  <div class="size-8 rounded-lg bg-indigo-500/20 flex items-center justify-center flex-shrink-0">
-                    <UIcon name="i-lucide-code-2" class="size-4 text-indigo-400" />
-                  </div>
-                  <div>
-                    <p class="text-xs text-neutral-500">Specialising in</p>
-                    <p class="text-sm font-semibold text-neutral-200">Vue & Nuxt</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <img 
+              src="@/assets/images/xolisa-professional-image.png"
+              alt="Xolisa Nunge"
+              class="relative rounded-3xl border border-neutral-800 shadow-xl shadow-black/40"
+            />
           </div>
         </UiScrollReveal>
       </div>
@@ -209,4 +180,3 @@ function scrollDown() {
     </button>
   </section>
 </template>
-

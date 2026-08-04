@@ -5,9 +5,9 @@ import { projects } from '~/data/projects'
 const activeProject = ref<string | null>(null)
 
 const statusConfig = {
-  live: { label: 'Live', class: 'text-emerald-400 bg-emerald-400/10 border-emerald-400/20' },
+  'live': { label: 'Live', class: 'text-emerald-400 bg-emerald-400/10 border-emerald-400/20' },
   'in-progress': { label: 'In Progress', class: 'text-yellow-400 bg-yellow-400/10 border-yellow-400/20' },
-  archived: { label: 'Archived', class: 'text-neutral-500 bg-neutral-500/10 border-neutral-500/20' }
+  'archived': { label: 'Archived', class: 'text-neutral-500 bg-neutral-500/10 border-neutral-500/20' }
 }
 
 // Project gradient colours for visual differentiation
@@ -30,12 +30,18 @@ const projectColours = ['from-pink-500/20', 'from-indigo-500/20', 'from-emerald-
             <UiSectionLabel label="Featured Work" />
           </UiScrollReveal>
           <UiScrollReveal :delay="100">
-            <h2 id="work-heading" class="text-headline">
+            <h2
+              id="work-heading"
+              class="text-headline"
+            >
               Problems I've solved.
             </h2>
           </UiScrollReveal>
         </div>
-        <UiScrollReveal variant="right" :delay="150">
+        <UiScrollReveal
+          variant="right"
+          :delay="150"
+        >
           <p class="text-neutral-500 leading-relaxed">
             Projects that challenged me to think harder, build better, and learn something I didn't know before.
           </p>
@@ -61,16 +67,29 @@ const projectColours = ['from-pink-500/20', 'from-indigo-500/20', 'from-emerald-
               <div
                 :class="[
                   'lg:col-span-2 relative overflow-hidden aspect-video lg:aspect-auto min-h-56 bg-gradient-to-br',
-                  projectColours[i]!,
+                  projectColours[i % projectColours.length]!,
                   'to-transparent'
                 ]"
               >
                 <div class="absolute inset-0 bg-[#0d1117] flex items-center justify-center">
                   <div class="text-center space-y-3">
-                    <div class="size-16 rounded-2xl bg-gradient-to-br from-pink-500/20 to-indigo-500/20 border border-white/10 flex items-center justify-center mx-auto">
-                      <UIcon name="i-lucide-code-2" class="size-7 text-pink-400/60" />
-                    </div>
-                    <p class="text-neutral-700 text-xs">Project screenshot</p>
+                    <UIcon
+                      name="i-lucide-monitor"
+                      class="size-8 text-neutral-600"
+                    />
+                    <p class="text-neutral-500 text-sm">
+                      Project Preview
+                    </p>
+                    <NuxtImg
+                      v-if="project.image"
+                      :src="project.image"
+                      alt="Project preview image"
+                      class="rounded-lg border border-neutral-800 shadow-lg shadow-black/40"
+                      width="400"
+                      height="225"
+                      :sizes="`(max-width: 1024px) 100vw, 400px`"
+                      :priority="i < 2"
+                    />
                   </div>
                 </div>
                 <!-- Year badge -->
@@ -94,8 +113,12 @@ const projectColours = ['from-pink-500/20', 'from-indigo-500/20', 'from-emerald-
                           {{ statusConfig[project.status].label }}
                         </span>
                       </div>
-                      <h3 class="text-xl font-display font-bold text-neutral-100">{{ project.title }}</h3>
-                      <p class="text-pink-400/70 text-sm mt-1 italic">{{ project.tagline }}</p>
+                      <h3 class="text-xl font-display font-bold text-neutral-100">
+                        {{ project.title }}
+                      </h3>
+                      <p class="text-pink-400/70 text-sm mt-1 italic">
+                        {{ project.tagline }}
+                      </p>
                     </div>
                     <div class="flex gap-2">
                       <a
@@ -106,7 +129,10 @@ const projectColours = ['from-pink-500/20', 'from-indigo-500/20', 'from-emerald-
                         class="p-2 glass rounded-lg text-neutral-500 hover:text-neutral-200 transition-colors"
                         aria-label="View on GitHub"
                       >
-                        <UIcon name="i-simple-icons-github" class="size-4" />
+                        <UIcon
+                          name="i-simple-icons-github"
+                          class="size-4"
+                        />
                       </a>
                       <a
                         v-if="project.live"
@@ -116,12 +142,17 @@ const projectColours = ['from-pink-500/20', 'from-indigo-500/20', 'from-emerald-
                         class="p-2 glass rounded-lg text-neutral-500 hover:text-pink-400 transition-colors"
                         aria-label="View live site"
                       >
-                        <UIcon name="i-lucide-arrow-up-right" class="size-4" />
+                        <UIcon
+                          name="i-lucide-arrow-up-right"
+                          class="size-4"
+                        />
                       </a>
                     </div>
                   </div>
 
-                  <p class="text-neutral-500 text-sm leading-relaxed">{{ project.description }}</p>
+                  <p class="text-neutral-500 text-sm leading-relaxed">
+                    {{ project.description }}
+                  </p>
 
                   <!-- Tech badges -->
                   <div class="flex flex-wrap gap-2">
@@ -166,22 +197,35 @@ const projectColours = ['from-pink-500/20', 'from-indigo-500/20', 'from-emerald-
               >
                 <div class="p-8 grid md:grid-cols-3 gap-8">
                   <div class="space-y-3">
-                    <h4 class="text-xs font-bold tracking-widest uppercase text-pink-400">The Challenge</h4>
-                    <p class="text-neutral-500 text-sm leading-relaxed">{{ project.challenge }}</p>
+                    <h4 class="text-xs font-bold tracking-widest uppercase text-pink-400">
+                      The Challenge
+                    </h4>
+                    <p class="text-neutral-500 text-sm leading-relaxed">
+                      {{ project.challenge }}
+                    </p>
                   </div>
                   <div class="space-y-3">
-                    <h4 class="text-xs font-bold tracking-widest uppercase text-pink-400">My Solution</h4>
-                    <p class="text-neutral-500 text-sm leading-relaxed">{{ project.solution }}</p>
+                    <h4 class="text-xs font-bold tracking-widest uppercase text-pink-400">
+                      My Solution
+                    </h4>
+                    <p class="text-neutral-500 text-sm leading-relaxed">
+                      {{ project.solution }}
+                    </p>
                   </div>
                   <div class="space-y-3">
-                    <h4 class="text-xs font-bold tracking-widest uppercase text-pink-400">What I Learned</h4>
+                    <h4 class="text-xs font-bold tracking-widest uppercase text-pink-400">
+                      What I Learned
+                    </h4>
                     <ul class="space-y-2">
                       <li
                         v-for="lesson in project.lessons"
                         :key="lesson"
                         class="text-neutral-500 text-sm leading-relaxed flex gap-2"
                       >
-                        <UIcon name="i-lucide-arrow-right" class="size-3 mt-1.5 text-pink-500/50 flex-shrink-0" />
+                        <UIcon
+                          name="i-lucide-arrow-right"
+                          class="size-3 mt-1.5 text-pink-500/50 flex-shrink-0"
+                        />
                         {{ lesson }}
                       </li>
                     </ul>

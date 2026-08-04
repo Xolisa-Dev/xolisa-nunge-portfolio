@@ -14,7 +14,7 @@ const navItems = [
   { label: 'Work', href: '#work' },
   { label: 'Process', href: '#process' },
   { label: 'Contact', href: '#contact' },
-  { label: 'Blog', href: '/blog' }
+  // { label: 'Blog', href: '/blog' }
 ]
 
 function handleScroll() {
@@ -40,7 +40,7 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
       'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
       scrolled
         ? 'py-3 bg-[#080b16]/90 backdrop-blur-xl border-b border-white/5 shadow-2xl shadow-black/40'
-        : 'py-6 bg-transparent'
+        : 'py-10 bg-transparent'
     ]"
   >
     <div class="container-xl flex items-center justify-between">
@@ -58,7 +58,10 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
       </NuxtLink>
 
       <!-- Desktop Nav -->
-      <nav aria-label="Main navigation" class="hidden md:flex items-center gap-8">
+      <nav 
+        aria-label="Main navigation"
+        class="hidden md:flex items-center gap-8"
+        >
         <button
           v-for="item in navItems"
           :key="item.href"

@@ -6,17 +6,17 @@ import PrimaryButton from "~/components/common/buttons/PrimaryButton.vue";
 
 const contacts = [
   {
-    icon: "i-simple-icons-vuedotjs",
+    icon: "i-lucide-mail",
     name: "Email",
     description: "devbyxolisa@gmail.com"
   },
   {
-    icon: "i-simple-icons-react",
+    icon: "i-lucide-phone",
     name: "Phone",
     description: "+27 63 537 7766"
   },
   {
-    icon: "i-simple-icons-nuxt",
+    icon: "i-simple-icons-linkedin",
     name: "LinkedIn",
     description: "Xolisa Nunge"
   }
@@ -25,23 +25,24 @@ const contacts = [
 </script>
 
 <template>
-  <div class="bg-slate-950 p-14" id="contact">
-    <div class="text-center text-white space-y-4 mb-10">
-      <Heading3>Let's Build Something <span class="text-accent-300">Amazing</span></Heading3>
-      <Paragraph>Have a project in mind? I'd love to hear about it. Whether it's a full-stack application or a creative web experience, let's make it happen together.
-      </Paragraph>
+  <section id="contact" class="section-padding bg-slate-950">
+    <div class="container-xl">
+      <div class="text-center text-white space-y-4 mb-12 max-w-2xl mx-auto">
+        <Heading3>Let's Build Something <span class="text-accent-300">Amazing</span></Heading3>
+        <Paragraph>Have a project in mind? I'd love to hear about it. Whether it's a full-stack application or a creative web experience, let's make it happen together.</Paragraph>
+      </div>
+
+      <div class="grid gap-6 sm:grid-cols-1 lg:grid-cols-3">
+        <ContactCard v-for="contact in contacts" :key="contact.name" :contact="contact" />
+      </div>
+
+      <div class="mt-12 flex justify-center">
+        <PrimaryButton>
+          <a href="mailto:devbyxolisa@gmail.com">Start a Conversation</a>
+        </PrimaryButton>
+      </div>
     </div>
-    <div class="grid gap-6 px-6 sm:grid-cols-1 lg:grid-cols-3 lg:px-20">
-      <ContactCard v-for="contact in contacts" :key="contact.name" :contact="contact" />
-    </div>
-<div class="py-10 align-center flex justify-center">
-  <PrimaryButton>
-      <a  href="mailto:devbyxolisa@gmail.com">
-    Start a Conversation
-      </a>
-  </PrimaryButton>
-</div>
-  </div>
+  </section>
 </template>
 
 <style scoped>
