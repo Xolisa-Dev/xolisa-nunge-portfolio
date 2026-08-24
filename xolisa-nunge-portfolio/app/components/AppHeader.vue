@@ -2,7 +2,7 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 import { useActiveSection } from '~/composables/useActiveSection'
 
-const sectionIds = ['hero', 'about', 'journey', 'work', 'process', 'contact']
+const sectionIds = ['hero', 'about', 'client-work', 'work', 'process', 'contact']
 const { activeSection } = useActiveSection(sectionIds)
 
 const scrolled = ref(false)
@@ -10,10 +10,10 @@ const mobileOpen = ref(false)
 
 const navItems = [
   { label: 'About', href: '#about' },
-  { label: 'Journey', href: '#journey' },
+  { label: 'Journey', href: '#client-work' },
   { label: 'Work', href: '#work' },
   { label: 'Process', href: '#process' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Contact', href: '#contact' }
   // { label: 'Blog', href: '/blog' }
 ]
 
@@ -58,10 +58,10 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
       </NuxtLink>
 
       <!-- Desktop Nav -->
-      <nav 
+      <nav
         aria-label="Main navigation"
         class="hidden md:flex items-center gap-8"
-        >
+      >
         <button
           v-for="item in navItems"
           :key="item.href"
@@ -83,7 +83,10 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
           @click.prevent="scrollTo('#contact')"
         >
           <span>Let's Talk</span>
-          <UIcon name="i-lucide-arrow-up-right" class="size-4" />
+          <UIcon
+            name="i-lucide-arrow-up-right"
+            class="size-4"
+          />
         </a>
       </div>
 
@@ -94,7 +97,10 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
         :aria-expanded="mobileOpen"
         @click="mobileOpen = !mobileOpen"
       >
-        <UIcon :name="mobileOpen ? 'i-lucide-x' : 'i-lucide-menu'" class="size-5" />
+        <UIcon
+          :name="mobileOpen ? 'i-lucide-x' : 'i-lucide-menu'"
+          class="size-5"
+        />
       </button>
     </div>
 
@@ -111,7 +117,10 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
         v-if="mobileOpen"
         class="md:hidden bg-[#080b16]/98 backdrop-blur-xl border-t border-white/5 px-6 py-6"
       >
-        <nav class="flex flex-col gap-1" aria-label="Mobile navigation">
+        <nav
+          class="flex flex-col gap-1"
+          aria-label="Mobile navigation"
+        >
           <button
             v-for="item in navItems"
             :key="item.href"
@@ -127,7 +136,10 @@ onUnmounted(() => window.removeEventListener('scroll', handleScroll))
           @click.prevent="scrollTo('#contact')"
         >
           <span>Let's Talk</span>
-          <UIcon name="i-lucide-arrow-up-right" class="size-4" />
+          <UIcon
+            name="i-lucide-arrow-up-right"
+            class="size-4"
+          />
         </a>
       </div>
     </Transition>

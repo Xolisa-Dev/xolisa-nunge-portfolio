@@ -1,51 +1,35 @@
 export interface ClientWork {
   id: string
+  number: string
   client: string
-  industry: string
-  project: string
-  role: string
-  contribution: string
-  tech: string[]
-  outcome: string
-  year: string
-  confidential: boolean
+  technologies: string[]
+  description: string
+  skills: string[]
 }
 
 export const clientWork: ClientWork[] = [
   {
-    id: 'client-1',
-    client: 'Local Business Client',
-    industry: 'Professional Services',
-    project: 'Client Management Web Application',
-    role: 'Full-Stack Developer',
-    contribution: 'Designed and built a full client management system from scratch, replacing a spreadsheet workflow with a modern web application. Handled everything from database design to UI implementation and deployment.',
-    tech: ['Nuxt', 'Vue 3', 'Strapi', 'MySQL', 'Tailwind CSS', 'Vercel'],
-    outcome: 'Reduced admin time by an estimated 60%. Client now manages projects, invoices, and communications in one place.',
-    year: '2024',
-    confidential: true
+    id: 'barron',
+    number: '01',
+    client: 'Barron',
+    technologies: ['Nuxt', 'Directus', 'REST APIs', 'Headless CMS'],
+    description: 'A rebuild of the Barron 2.0 website that introduced me to Nuxt. I worked with Nuxt, Directus CMS, and APIs to build a frontend capable of retrieving structured content from a headless CMS and dynamically displaying it across the website.',
+    skills: ['Nuxt', 'Directus', 'API integration', 'Headless CMS architecture', 'Dynamic content', 'Frontend development']
   },
   {
-    id: 'client-2',
-    client: 'Content Publisher',
-    industry: 'Media & Publishing',
-    project: 'Custom WordPress Theme Rebuild',
-    role: 'Frontend Developer',
-    contribution: 'Rebuilt an ageing, slow WordPress site with a custom theme built from the ground up. Focused on performance, accessibility, and clean semantic markup. No page builders — just solid code.',
-    tech: ['WordPress', 'PHP', 'JavaScript', 'CSS', 'ACF'],
-    outcome: 'Improved Lighthouse performance score from 38 to 91. Mobile LCP reduced from 8.2s to 1.8s.',
-    year: '2024',
-    confidential: true
+    id: 'flume',
+    number: '02',
+    client: 'Flume Digital Marketing',
+    technologies: ['WordPress', 'Elementor', 'CRO', 'A/B Testing', 'Debugging'],
+    description: 'Working on the Flume website has expanded my experience with WordPress and Elementor. I work closely with the CRO team to support website improvements and A/B testing initiatives, including troubleshooting conflicts between Elementor functionality and testing implementations.',
+    skills: ['WordPress', 'Elementor', 'CRO', 'A/B testing', 'Debugging', 'Production website maintenance', 'Troubleshooting', 'Website optimisation']
   },
   {
-    id: 'client-3',
-    client: 'Small E-commerce Business',
-    industry: 'Retail',
-    project: 'Landing Page & Product Showcase',
-    role: 'Frontend Developer',
-    contribution: 'Designed and developed a marketing landing page with product showcase, testimonials, and a lead capture form. Mobile-first, fast-loading, and easy for the client to update.',
-    tech: ['HTML', 'CSS', 'JavaScript', 'Netlify'],
-    outcome: 'Launched on time and within budget. Client reported a measurable increase in enquiries within the first month.',
-    year: '2023',
-    confidential: false
+    id: 'toyota',
+    number: '03',
+    client: 'Toyota',
+    technologies: ['Next.js', 'WordPress', 'Elementor', 'Apostrophe CMS', 'Component optimisation'],
+    description: 'Working across Toyota web properties has exposed me to different frontend and CMS environments. I have worked with Next.js to update global components and enhance existing sections, while also working with Apostrophe CMS and WordPress/Elementor on other Toyota industries/subsections.',
+    skills: ['Next.js', 'Reusable/global components', 'Component optimisation', 'Apostrophe CMS', 'WordPress', 'Elementor', 'CMS optimisation', 'Large-scale web properties']
   }
 ]

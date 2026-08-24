@@ -3,80 +3,107 @@ import { clientWork } from '~/data/clients'
 </script>
 
 <template>
-  <section class="section-padding bg-[#04060f] relative" aria-labelledby="clients-heading">
-    <div class="container-xl">
-      <!-- Header -->
-      <div class="grid lg:grid-cols-2 gap-8 items-end mb-16">
+  <section
+    id="client-work"
+    class="section-padding bg-[#04060f] relative overflow-hidden"
+    aria-labelledby="client-work-heading"
+  >
+    <div class="absolute inset-0 dot-grid opacity-[0.025] pointer-events-none" />
+    <div class="absolute top-1/3 -left-48 size-96 rounded-full bg-indigo-500/5 blur-3xl pointer-events-none" />
+
+    <div class="container-xl relative">
+      <div class="grid lg:grid-cols-2 gap-8 items-end mb-14 md:mb-20">
         <div class="space-y-4">
           <UiScrollReveal>
-            <UiSectionLabel label="Client Work" />
+            <UiSectionLabel label="Selected Work" />
           </UiScrollReveal>
           <UiScrollReveal :delay="100">
-            <h2 id="clients-heading" class="text-headline">
-              Trusted by real<br>businesses.
+            <h2
+              id="client-work-heading"
+              class="text-headline"
+            >
+              Selected client work.
             </h2>
           </UiScrollReveal>
         </div>
-        <UiScrollReveal variant="right" :delay="150">
-          <p class="text-neutral-500 leading-relaxed">
-            Real clients, real requirements, real consequences. Some details are kept confidential out of respect for my clients' privacy.
+        <UiScrollReveal
+          variant="right"
+          :delay="150"
+        >
+          <p class="max-w-xl text-neutral-500 leading-relaxed">
+            A selection of client projects that have shaped my experience across frontend development, CMS integration, CRO, debugging, and website optimisation.
           </p>
         </UiScrollReveal>
       </div>
 
-      <!-- Client work list -->
-      <div class="space-y-5">
-        <UiScrollReveal
-          v-for="(work, i) in clientWork"
+      <ol class="border-t border-white/8">
+        <li
+          v-for="(work, index) in clientWork"
           :key="work.id"
-          :delay="i * 100"
+          class="border-b border-white/8"
         >
-          <div class="card-base p-6 md:p-8 group hover:border-pink-500/15">
-            <div class="flex flex-col md:flex-row md:items-start gap-6 md:gap-8">
-              <!-- Left: Client info -->
-              <div class="flex-shrink-0 space-y-2 md:w-48">
-                <div class="flex items-center gap-2">
-                  <div class="size-8 rounded-lg bg-pink-500/10 flex items-center justify-center">
-                    <UIcon
-                      :name="work.confidential ? 'i-lucide-lock' : 'i-lucide-building-2'"
-                      class="size-4 text-pink-400"
-                    />
-                  </div>
-                  <span class="text-neutral-200 font-semibold text-sm">{{ work.client }}</span>
-                </div>
-                <p class="text-neutral-600 text-xs pl-10">{{ work.industry }}</p>
-                <p class="text-neutral-600 text-xs pl-10">{{ work.year }}</p>
+          <UiScrollReveal :delay="index * 100">
+            <article class="group grid lg:grid-cols-12 gap-x-8 gap-y-6 py-8 md:py-11 transition-colors duration-300 hover:bg-white/[0.015]">
+              <div class="lg:col-span-2 flex items-start gap-4 lg:block">
+                <span
+                  class="font-display text-5xl md:text-6xl font-bold tracking-[-0.06em] text-pink-500/75 group-hover:text-pink-400 transition-colors duration-300"
+                  aria-hidden="true"
+                >
+                  {{ work.number }}
+                </span>
+                <span class="mt-3 inline-flex items-center gap-2 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-neutral-600 lg:flex">
+                  <span class="size-1.5 rounded-full bg-pink-500/70" />
+                  Client project
+                </span>
               </div>
 
-              <!-- Right: Project details -->
-              <div class="flex-1 space-y-4">
+              <div class="lg:col-span-6 xl:col-span-7 space-y-5">
                 <div>
-                  <h3 class="text-neutral-100 font-semibold font-display">{{ work.project }}</h3>
-                  <p class="text-pink-400/60 text-sm">{{ work.role }}</p>
-                </div>
-                <p class="text-neutral-500 text-sm leading-relaxed">{{ work.contribution }}</p>
-
-                <!-- Outcome -->
-                <div class="flex items-start gap-3 p-4 rounded-xl bg-emerald-500/5 border border-emerald-500/10">
-                  <UIcon name="i-lucide-trending-up" class="size-4 text-emerald-400 flex-shrink-0 mt-0.5" />
-                  <p class="text-neutral-400 text-sm leading-relaxed">
-                    <span class="text-emerald-400 font-medium">Outcome: </span>{{ work.outcome }}
+                  <h3 class="font-display text-2xl md:text-3xl font-bold text-neutral-100">
+                    {{ work.client }}
+                  </h3>
+                  <p class="mt-4 max-w-2xl text-sm md:text-base leading-relaxed text-neutral-500">
+                    {{ work.description }}
                   </p>
                 </div>
-
-                <!-- Tech -->
-                <div class="flex flex-wrap gap-2">
+                <div
+                  class="flex flex-wrap gap-2"
+                  aria-label="Technologies used"
+                >
                   <UiTechBadge
-                    v-for="tech in work.tech"
-                    :key="tech"
-                    :name="tech"
+                    v-for="technology in work.technologies"
+                    :key="technology"
+                    :name="technology"
                   />
                 </div>
               </div>
-            </div>
-          </div>
-        </UiScrollReveal>
-      </div>
+
+              <div class="lg:col-span-4 xl:col-span-3 lg:border-l lg:border-white/8 lg:pl-8">
+                <h4 class="mb-3 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-pink-400">
+                  Experience built
+                </h4>
+                <ul
+                  class="grid gap-2"
+                  aria-label="Key skills"
+                >
+                  <li
+                    v-for="skill in work.skills"
+                    :key="skill"
+                    class="flex items-start gap-2 text-sm leading-relaxed text-neutral-500"
+                  >
+                    <UIcon
+                      name="i-lucide-arrow-up-right"
+                      class="mt-1 size-3 shrink-0 text-pink-500/60"
+                      aria-hidden="true"
+                    />
+                    <span>{{ skill }}</span>
+                  </li>
+                </ul>
+              </div>
+            </article>
+          </UiScrollReveal>
+        </li>
+      </ol>
     </div>
   </section>
 </template>
