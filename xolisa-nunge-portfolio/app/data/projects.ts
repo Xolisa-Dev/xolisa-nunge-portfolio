@@ -83,5 +83,39 @@ export const projects: Project[] = [
     featured: false,
     year: '2022',
     status: 'archived'
+  },
+  {
+    id: 'little-life-menu',
+    title: 'Little Life Menu',
+    tagline: 'A gentle menu for whatever energy you\'ve got.',
+    description:
+    'A gentle activity-suggestion app for days when you don\'t know what to do with yourself. Pick an energy level — low, medium or high — and it generates three matching activities, with one chance to regenerate if none of them feel right. Most productivity tools assume you\'re always at full capacity; this one starts by asking how you\'re actually doing, and treats every answer as valid.',
+
+    challenge:
+    'Decision fatigue is real, especially on low-energy days. I wanted a tool that removes the pressure of choosing, offering a few well-matched ideas framed as possibilities — not tasks to complete — rather than an endless list to work through.',
+
+    role:
+    'Solo — Frontend Development, translating a design mockup into a built, responsive UI',
+
+    solution:
+    'Built an energy selector with three cards powered by native radio inputs, so selection state, keyboard navigation and accessibility come largely from the browser itself. A generate button reveals three activities matched to the chosen energy level, drawn from a library of 30 curated activities each tagged with category, duration and venue. A one-time regenerate option, tracked per energy level with a Map and a Set, guarantees fresh suggestions rather than repeats. Astro pre-renders all the content at build time, with a small client-side script handling only the interactive bits, keeping the page fast with minimal JS shipped.',
+
+    lessons: [
+      'How Astro separates build-time rendering from the JavaScript that actually ships to the browser.',
+      'How to pass data down a component tree through typed props, keeping content and markup decoupled.',
+      'How to design UI state around native browser behaviour, like checked radio inputs, instead of reaching for a framework.'
+    ],
+
+    tech: ['Astro', 'TypeScript', 'Tailwind CSS v4', 'daisyUI 5', 'JavaScript'],
+
+    image: '/images/projects/little-life-menu.png',
+
+    live: 'https://little-life-menu.netlify.app',
+
+    featured: true,
+
+    year: '2026',
+
+    status: 'live'
   }
 ]
