@@ -14,6 +14,12 @@ export interface Project {
   featured: boolean
   year: string
   status: 'live' | 'in-progress' | 'archived'
+  /** Set only when a project's first version was AI-generated from my own requirements. */
+  buildType?: 'solo' | 'ai-assisted'
+  /** Honest, short account of how an AI-assisted build actually happened. */
+  buildNote?: string
+  /** Features I'm adding myself, as a placeholder list to grow over time. */
+  buildingMyself?: string[]
 }
 
 export const projects: Project[] = [
@@ -117,5 +123,48 @@ export const projects: Project[] = [
     year: '2026',
 
     status: 'live'
+  },
+  {
+    id: 'devbloom',
+    title: 'DevBloom',
+    tagline: 'Tracking my own path from junior to lead.',
+    description:
+    'DevBloom is a personal career development dashboard I\'m building to track my path from Junior Frontend Developer to Frontend Lead. It brings together a study dashboard with weekly hours against a target, a career roadmap of skills and milestones for each stage, a learning hub with module and lesson checklists, a weekly planner that lets me reschedule missed sessions, a drag-and-drop task board, a skill tracker backed by evidence rather than self-rating, lightweight project tracking, and a weekly learning journal.',
+
+    challenge:
+    'Moving towards a lead role means juggling study time, course progress, skills evidence, tasks and reflection — usually scattered across a notebook, a spreadsheet and a few different apps. I wanted one place that showed me, honestly, how much progress I was actually making each week.',
+
+    role:
+    'Requirements, design direction & feature prioritisation — first version generated with Claude Code, then reviewed, tested and refined by me',
+
+    solution:
+    'Built around a typed data model and one generic hook — useCollection — that handles create, update and delete across every list, from tasks to journal entries. Progress is calculated from checkboxes rather than stored separately, so there\'s a single source of truth for what\'s actually done. Data persists to localStorage with versioned migrations, plus JSON export and import so nothing is ever truly stuck in the browser. Pages load on demand, so the charting library only loads on the dashboard page where it\'s needed. Every interaction — the Kanban board, the modals, the charts — has a keyboard-accessible or colour-blind-safe alternative built in from the start.',
+
+    lessons: [
+      'Reviewing generated code is its own skill — spotting what\'s solid, what\'s fragile, and what I don\'t yet understand well enough to trust blindly.',
+      'One generic hook for create, update and delete keeps a growing app from drowning in repeated boilerplate.',
+      'Deriving progress from checkboxes instead of storing it separately avoids an entire category of sync bugs.',
+      'Accessibility is far easier to build in from the first native <dialog> than to retrofit later.'
+    ],
+
+    tech: ['React 18', 'TypeScript', 'Vite', 'Tailwind CSS', 'React Router', 'Recharts', 'Lucide Icons'],
+
+    image: '/images/projects/devbloom-dashboard.webp',
+
+    featured: true,
+
+    year: '2026',
+
+    status: 'in-progress',
+
+    buildType: 'ai-assisted',
+
+    buildNote:
+    'I wrote the requirements, design direction and feature priorities for DevBloom, then used Claude Code to generate the first version. I reviewed the code as it was built, tested every feature myself, and asked for fixes and changes along the way. It\'s an honest starting point rather than something I\'m claiming to have hand-written line by line — and it\'s now the foundation I\'m building on myself.',
+
+    buildingMyself: [
+      'Editing lesson titles',
+      'A chart of skills by level'
+    ]
   }
 ]

@@ -112,6 +112,12 @@ const projectColours = ['from-pink-500/20', 'from-indigo-500/20', 'from-emerald-
                         >
                           {{ statusConfig[project.status].label }}
                         </span>
+                        <span
+                          v-if="project.buildType === 'ai-assisted'"
+                          class="text-xs font-medium px-2 py-0.5 rounded-full border text-indigo-400 bg-indigo-400/10 border-indigo-400/20"
+                        >
+                          AI-assisted build
+                        </span>
                       </div>
                       <h3 class="text-xl font-display font-bold text-neutral-100">
                         {{ project.title }}
@@ -227,6 +233,49 @@ const projectColours = ['from-pink-500/20', 'from-indigo-500/20', 'from-emerald-
                           class="size-3 mt-1.5 text-pink-500/50 flex-shrink-0"
                         />
                         {{ lesson }}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div
+                  v-if="project.buildNote || project.buildingMyself?.length"
+                  class="border-t border-white/5 p-8 space-y-6"
+                >
+                  <div
+                    v-if="project.buildNote"
+                    class="space-y-3"
+                  >
+                    <h4 class="text-xs font-bold tracking-widest uppercase text-indigo-400 flex items-center gap-2">
+                      <UIcon
+                        name="i-lucide-sparkles"
+                        class="size-3.5"
+                      />
+                      How It Was Built
+                    </h4>
+                    <p class="text-neutral-500 text-sm leading-relaxed">
+                      {{ project.buildNote }}
+                    </p>
+                  </div>
+
+                  <div
+                    v-if="project.buildingMyself?.length"
+                    class="space-y-3"
+                  >
+                    <h4 class="text-xs font-bold tracking-widest uppercase text-pink-400">
+                      What I'm Building Myself
+                    </h4>
+                    <ul class="space-y-2">
+                      <li
+                        v-for="item in project.buildingMyself"
+                        :key="item"
+                        class="text-neutral-500 text-sm leading-relaxed flex gap-2"
+                      >
+                        <UIcon
+                          name="i-lucide-hammer"
+                          class="size-3 mt-1.5 text-pink-500/50 flex-shrink-0"
+                        />
+                        {{ item }}
                       </li>
                     </ul>
                   </div>
