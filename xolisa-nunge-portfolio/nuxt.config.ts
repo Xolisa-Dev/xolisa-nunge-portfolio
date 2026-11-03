@@ -6,14 +6,6 @@ export default defineNuxtConfig({
     enabled: true
   },
 
-  css: ['~/assets/css/main.css'],
-
-  routeRules: {
-    '/': { prerender: true }
-  },
-
-  compatibilityDate: '2025-01-15',
-
   app: {
     head: {
       link: [
@@ -26,6 +18,20 @@ export default defineNuxtConfig({
       ]
     }
   },
+
+  css: ['~/assets/css/main.css'],
+
+  runtimeConfig: {
+    public: {
+      web3formsAccessKey: ''
+    }
+  },
+
+  routeRules: {
+    '/': { prerender: true }
+  },
+
+  compatibilityDate: '2025-01-15',
 
   eslint: {
     config: {
