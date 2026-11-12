@@ -1,7 +1,10 @@
 {
-    "name": "xolisa-nunge-portfolio",
-    "compatibility_date": "2026-11-01",
-    "assets": {
-      "directory": "./dist"
-    }
+  "name": "xolisa-nunge-portfolio",
+  "main": "./.output/server/index.mjs",
+  "compatibility_date": "2026-11-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": "./.output/public",
+    "binding": "ASSETS"
   }
+}
